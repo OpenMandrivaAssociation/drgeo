@@ -8,7 +8,6 @@ Release:	%{release}
 License:	GPL
 Group:		Sciences/Mathematics
 URL:		http://www.ofset.org/drgeo/
-Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source:		http://prdownloads.sourceforge.net/ofset/%{name}-%{version}.tar.bz2
 Source1:	gnome-drgenius.png
