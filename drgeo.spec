@@ -37,20 +37,6 @@ situation with students from primary or secondary level.
 rm -rf %{buildroot}
 %makeinstall_std
 
-# menu entry
-mkdir -p %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} << _EOF_
-?package(%{name}): \
- command="%{_bindir}/drgeo" \
- icon="gnome-drgenius.png" \
- longtitle="Dr.Geo Math Tool" \
- needs="x11" \
- section="More Applications/Sciences/Mathematics" \
- title="Dr.Geo" \
- startup_notify="yes" \
- xdg="true"
-_EOF_
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-MoreApplications-Sciences-Mathematics" \
@@ -90,7 +76,6 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
 %{_datadir}/TeXmacs/plugins/drgeo
-%{_menudir}/%{name}
 %{_iconsdir}/gnome-drgenius.png
 %{_miconsdir}/gnome-drgenius.png
 %{_liconsdir}/gnome-drgenius.png
