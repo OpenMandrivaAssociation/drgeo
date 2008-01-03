@@ -12,6 +12,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source:		http://prdownloads.sourceforge.net/ofset/%{name}-%{version}.tar.bz2
 Source1:	gnome-drgenius.png
+Patch0:		drgeo-fix-menu-entry.patch
 
 BuildRequires:	ImageMagick
 BuildRequires:	guile-devel
@@ -28,6 +29,7 @@ situation with students from primary or secondary level.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
