@@ -1,7 +1,7 @@
 %define version 1.1.0
 %define release %mkrel 8
 
-Summary:	Dr. Geo is an interactive geometry software
+Summary:	Interactive geometry software
 Name:		drgeo
 Version:	%{version}
 Release:	%{release}
