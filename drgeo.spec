@@ -1,5 +1,5 @@
 %define version 1.1.0
-%define release %mkrel 9
+%define release %mkrel 11
 
 Summary:	Interactive geometry software
 Name:		drgeo
