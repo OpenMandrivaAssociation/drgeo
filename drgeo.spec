@@ -14,7 +14,7 @@ Source:		http://prdownloads.sourceforge.net/ofset/%{name}-%{version}.tar.bz2
 Source1:	gnome-drgenius.png
 Patch0:		drgeo-fix-menu-entry.patch
 
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	guile-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libglade2.0-devel
