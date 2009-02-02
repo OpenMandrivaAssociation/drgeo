@@ -1,5 +1,5 @@
 %define version 1.1.0
-%define release %mkrel 11
+%define release %mkrel 2
 
 Summary:	Interactive geometry software
 Name:		drgeo
@@ -13,7 +13,8 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 Source:		http://prdownloads.sourceforge.net/ofset/%{name}-%{version}.tar.bz2
 Source1:	gnome-drgenius.png
 Patch0:		drgeo-fix-menu-entry.patch
-
+Patch1:		drgeo-1.1.0-fix-str-fmt.patch
+Patch2:		03-fix_segfault.dpatch
 BuildRequires:	imagemagick
 BuildRequires:	guile-devel
 BuildRequires:	libxml2-devel
@@ -30,6 +31,8 @@ situation with students from primary or secondary level.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
+%patch2 -p1
 
 %build
 %configure2_5x
