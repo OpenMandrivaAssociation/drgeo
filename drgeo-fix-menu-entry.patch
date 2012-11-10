@@ -1,0 +1,12 @@
+diff -p -up ./drgeo.desktop.in.tv ./drgeo.desktop.in
+--- ./drgeo.desktop.in.tv	2008-01-03 18:45:45.000000000 +0100
++++ ./drgeo.desktop.in	2008-01-03 18:45:53.000000000 +0100
+@@ -3,7 +3,7 @@ Encoding=UTF-8
+ _Name=Dr.Geo
+ _Comment=Dr.Geo Math Tool
+ Exec=drgeo
+-Icon=gnome-drgenius.png
++Icon=gnome-drgenius
+ Terminal=false
+ StartupNotify=true
+ Type=Application

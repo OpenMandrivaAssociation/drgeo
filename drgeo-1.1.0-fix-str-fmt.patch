@@ -1,0 +1,79 @@
+--- geo/drgeo_postscriptdrawable.cc.str	2009-02-02 19:38:42.000000000 +0100
++++ geo/drgeo_postscriptdrawable.cc	2009-02-02 19:40:25.000000000 +0100
+@@ -130,8 +130,8 @@
+   p = areaToPostScript (point);
+ 
+   /* we're initializing color and line width */
+-  fprintf (fileHandle, postscriptColor[style.color]);
+-  fprintf (fileHandle, postscriptLineWidth[drgeoThicknessNormal + 1]);
++  fprintf (fileHandle, "%s", postscriptColor[style.color]);
++  fprintf (fileHandle, "%s", postscriptLineWidth[drgeoThicknessNormal + 1]);
+ 
+   switch (style.pointShape)
+     {
+@@ -207,9 +207,9 @@
+   gint nb;
+ 
+   /* we're initializing color and line width */
+-  fprintf (fileHandle, postscriptColor[style.color]);
++  fprintf (fileHandle, "%s", postscriptColor[style.color]);
+   /* Invisible line. */
+-  fprintf (fileHandle, postscriptLineWidth[0]);
++  fprintf (fileHandle, "%s", postscriptLineWidth[0]);
+ 
+   fprintf (fileHandle, "%%Polygon\nnewpath\n");
+ 
+@@ -235,11 +235,11 @@
+   p2 = areaToPostScript (end);
+   p1 = areaToPostScript (start);
+ 
+-  fprintf (fileHandle, postscriptColor[style.color]);
++  fprintf (fileHandle, "%s", postscriptColor[style.color]);
+   if (style.mask == yes)
+-    fprintf (fileHandle, postscriptLineWidth[0]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[0]);
+   else
+-    fprintf (fileHandle, postscriptLineWidth[style.thick + 1]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[style.thick + 1]);
+   fprintf (fileHandle,
+ 	   "%% Segment\n%f %f moveto %f %f lineto stroke\n",
+ 	   p1.getX () * PostScriptScale, p1.getY () * PostScriptScale,
+@@ -263,11 +263,11 @@
+   drgeoPoint p;
+ 
+   p = areaToPostScript (center);
+-  fprintf (fileHandle, postscriptColor[style.color]);
++  fprintf (fileHandle, "%s", postscriptColor[style.color]);
+   if (style.mask == yes)
+-    fprintf (fileHandle, postscriptLineWidth[0]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[0]);
+   else
+-    fprintf (fileHandle, postscriptLineWidth[style.thick + 1]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[style.thick + 1]);
+   fprintf (fileHandle,
+ 	   /* is there a better way to draw a circle in ps ? */
+ 	   "%% Circle\n%f %f moveto %f %f %f 0 360 arc closepath stroke\n",
+@@ -285,11 +285,11 @@
+   drgeoPoint p, startPoint;
+ 
+   p = areaToPostScript (center);
+-  fprintf (fileHandle, postscriptColor[style.color]);
++  fprintf (fileHandle, "%s", postscriptColor[style.color]);
+   if (style.mask == yes)
+-    fprintf (fileHandle, postscriptLineWidth[0]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[0]);
+   else
+-    fprintf (fileHandle, postscriptLineWidth[style.thick + 1]);
++    fprintf (fileHandle, "%s", postscriptLineWidth[style.thick + 1]);
+ 
+ 
+ 
+@@ -336,7 +336,7 @@
+   // FIXME: how to handle this correctly ?
+   convString = g_convert (text, -1, "iso8859-1", "utf-8", NULL, NULL, NULL);
+ 
+-  fprintf (fileHandle, postscriptColor[fontColor]);
++  fprintf (fileHandle, "%s", postscriptColor[fontColor]);
+   /* The size of the font is arbitrary : 10 points */
+   fprintf (fileHandle,
+ 	   "%% Text\n/Times findfont 10 scalefont setfont %f %f moveto (%s) show\n",
