@@ -7,7 +7,7 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		Sciences/Mathematics
-URL:		http://www.ofset.org/drgeo/
+URL:		https://www.ofset.org/drgeo/
 Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source:		http://prdownloads.sourceforge.net/ofset/%{name}-%{version}.tar.bz2
