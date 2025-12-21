@@ -15,6 +15,11 @@ Source1:	gnome-drgenius.png
 Patch0:		drgeo-fix-menu-entry.patch
 Patch1:		drgeo-1.1.0-fix-str-fmt.patch
 Patch2:		03-fix_segfault.dpatch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	guile-devel
 BuildRequires:	libxml2-devel
